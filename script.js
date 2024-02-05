@@ -10,7 +10,11 @@ const fetchMe = () => {
                         <img src="${song.songImage}" alt="" class="songImg"/> 
                         <div class="songTA">
                             <p>${song.songTitle}</p>
-                            <p>${song.artistName}</p>
+                            <p><i class="fas fa-user"></i>${song.artistName}</p>
+                        </div>
+                        <div>
+                            <button></button>
+                            <button></button>
                         </div>
                     </div>
                 `
