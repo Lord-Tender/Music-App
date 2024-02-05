@@ -8,7 +8,7 @@ const fetchMe = () => {
                 musics.innerHTML += `
                     <div class="musicIts">
                         <img src="${song.songImage}" alt="" class="songImg"/> 
-                        <div>
+                        <div class="songTA">
                             <p>${song.songTitle}</p>
                             <p>${song.artistName}</p>
                         </div>
