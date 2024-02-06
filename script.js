@@ -39,7 +39,7 @@ const fetchMe = async () => {
                             <p>${songDetail[index].artistName}</p>
                         </div>
                         <div class="buttonArea">
-                            <div class=""><i class="fas fa-heart fovIcon" onclick="addFov()"></i></div>
+                            <div class=""><i class="fas fa-heart" id="fovIcon" onclick="addFov(${index})"></i></div>
                             <button class="playButton" onclick="play(${index})">Play</button>
                         </div>
                     </div>
@@ -56,4 +56,19 @@ const play = async (indexNumber) => {
     var music = result[indexNumber].songUrl
     var song = new Audio(music)
     song.play()
+}
+
+let favoriteSong = []
+
+const addFov = async (getIndex) => {
+    let fovIcon = document.getElementById("fovIcon").style.color = 'white'
+
+    let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
+    let get = await fetch(url)
+    let result = await get.json()
+    // console.log(result[0]);
+    if (fovIcon) {
+        favoriteSong.push(result[getIndex])
+        localStorage.setItem("favSongs", JSON.stringify(favoriteSong))
+    }
 }
