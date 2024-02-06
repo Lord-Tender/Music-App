@@ -8,7 +8,7 @@
     display: flex;
     background-color: rgba(0, 0, 0, 0.781);
     height: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.781), orange, black);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.781), rgb(255, 123, 0), black);
 }
 
 .musicSide {
@@ -17,8 +17,8 @@
     border-top-left-radius: 1.5em;
     border-bottom-left-radius: 1.5em;
     padding: 1.5em;
-    background-color: rgb(255, 102, 0);
     background-color: rgb(31, 25, 25);
+    background-image: linear-gradient(to right, rgb(36, 33, 33), rgb(73, 34, 34),rgb(36, 33, 33));
 }
 
 .sideBar {
@@ -26,6 +26,12 @@
     padding: 1.3rem;
     padding-left: 1.9em;
     font-size: 1.05em;
+    position: relative;
+}
+
+.sideBarInner {
+    position: fixed;
+    top: 5%;
 }
 
 .sideBar h2 {
@@ -55,6 +61,8 @@
     width: 100%;
     display: flex;
     padding-left: 2.5em;
+    position: sticky;
+    top: 1%;
 }
 
 .bannerImg {
@@ -143,8 +151,8 @@
     font-size: 1rem;
 }
 
-.musicIts button :hover{
-    background-color: #ff756e;
+.musicIts button:hover{
+    background-color: #ffa503;
 }
 
 #fovIcon{
@@ -178,9 +186,6 @@
     border-radius: 5%;
 }
 
-#musics{
-    /* display: none; */
-}
 
 
 

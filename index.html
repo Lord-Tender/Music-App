@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,22 @@
     </style>
     <script defer src="https://kit.fontawesome.com/7c37944b19.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="mainSection">
         <div class="sideBar">
-            <h2>Library</h2>
-            <p>Music</p>
-            <p>Artist</p>
-            <p>Albums</p>
-            <p>x</p>
-            <div>
-                <h2 style="font-size: 1.3em;">My Music</h2>
-                <p>Recently Played</p>
-                <p>Favourite Song</p>
-                <p>Local Storage</p>
+            <div class="sideBarInner">
+                <h2>Library</h2>
+                <p>Music</p>
+                <p>Artist</p>
+                <p>Albums</p>
+                <!-- <p>x</p> -->
+                <div>
+                    <h2 style="font-size: 1.3em;">My Music</h2>
+                    <p>Recently Played</p>
+                    <p>Favourite Song</p>
+                    <p>Local Storage</p>
+                </div>
             </div>
         </div>
         <div class="musicSide">
@@ -42,10 +46,16 @@
                     </div>
                     <div id="loader">
                         <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
-                            <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
-                            <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
-                            <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-                            <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+                            <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000"
+                                stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330"
+                                stroke-linecap="round"></circle>
+                            <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000"
+                                stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110"
+                                stroke-linecap="round"></circle>
+                            <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000"
+                                stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+                            <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000"
+                                stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
                         </svg>
                     </div>
                     <div id="musics"></div>
@@ -61,4 +71,5 @@
         window.onload = fetchMe
     </script>
 </body>
+
 </html>
