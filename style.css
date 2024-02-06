@@ -116,7 +116,38 @@
     margin-top: 25px;
     display: flex;
     height: 100%;
-    margin-left: 3.5em;
+    padding-left: 10%;
+    justify-content: space-between;
+    padding-right: 10%;
+}
+
+.buttonArea{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 5%;
+}
+
+.musicIts button{
+    border: none;
+    background-color: rgb(255, 38, 0);
+    width: 5em;
+    height: 2rem;
+    border-radius: 4px;
+    color: aliceblue;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+}
+
+.musicIts button :hover{
+    background-color: #ff756e;
+}
+
+.fovIcon{
+    color: white;
+    font-size: 2rem;
 }
 
 .songTA{
@@ -124,7 +155,6 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin-left: 3rem;
 }
 
 .songTA :nth-child(1){
