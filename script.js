@@ -31,9 +31,25 @@ const play = async (indexNumber) => {
     let get = await fetch(url)
     let result = await get.json()
     console.log(result[0]);
-    var music = result[indexNumber].songUrl
-    var song = new Audio(music)
-    song.play()
+    const audioPlayer = document.createElement('audio');
+    audioPlayer.src = `${result[indexNumber].songUrl}`
+    audioPlayer.pause()
+    audioPlayer.play()
+    
+    // var music = result[indexNumber].songUrl
+    // var song = new Audio(music)
+    // song.play()
+}
+
+const pauseIt = async () => {
+    let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
+    let get = await fetch(url)
+    let result = await get.json()
+    for (let index = 0; index < result.length; index++) {
+        console.log(music);
+        var music = result[index].songUrl.pause()
+    }
+
 }
 
 let favoriteSong = []

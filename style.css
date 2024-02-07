@@ -61,8 +61,8 @@
     width: 100%;
     display: flex;
     padding-left: 2.5em;
-    position: sticky;
-    top: 1%;
+    /* position: sticky;
+    top: 1%; */
 }
 
 .bannerImg {
