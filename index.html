@@ -63,13 +63,13 @@
                 <div class="rightPlaying">
                     <div class="nowPlay">Now Playing</div>
                     <div class="musicImg">
-                        <img src="Image/top-view-music-concept-with-casette.jpg" alt="">
+                        <img src="Image/top-view-music-concept-with-casette.jpg" alt="" id="songImgPn">
                     </div>
                     <div>
                         <p id="titlePN">Music Title</p>
                         <p id="artistPN">Artist Name</p>
                     </div>
-                    <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 25px;" class="duration">
+                    <div class="duration">
                         <p>0:00</p>
                         <div style="background-color: rgba(2, 2, 2, 0.774); height: 8px; width: 75% !important; border-radius: 10px;">
                             <div style="background-color: white; height: 100%; width: 0 ;"></div>
@@ -77,10 +77,10 @@
                         <p>0:00</p>
                     </div>
                     <div class="controls">
-                        <div id="backPlay"></div>
-                        <div id="pauseButton"></div>
-                        <div id="nextButton"></div>
-                        <div id="loopButton"></div>
+                        <div id="backPlay"><i class="fa-solid fa-backward-fast"></i></div>
+                        <div id="pauseButton"><i class="fa-solid fa-play" id="play"></i> <i class="fa-solid fa-pause" id="pause"></i></div>
+                        <div id="nextButton"><i class="fa-solid fa-forward-fast"></i></div>
+                        <div id="loopButton"><i class="fa-solid fa-repeat"></i></div>
                     </div>
                 </div>
             </section>

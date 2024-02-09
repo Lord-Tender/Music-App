@@ -39,6 +39,9 @@ let playArray = []
 // }
 
 const audioPlayer = document.createElement('audio');
+let songImgPn = document.getElementById('songImgPn')
+let titlePN = document.getElementById('titlePN')
+let artistPN = document.getElementById('artistPN')
 
 const play = async (indexNumber) => {
     pauseIt()
@@ -48,19 +51,10 @@ const play = async (indexNumber) => {
     console.log(result[0]);
     audioPlayer.src = `${result[indexNumber].songUrl}`
     audioPlayer.play()
+    songImgPn.src =`${result[indexNumber].songImage}`
+    titlePN.innerHTML = `${result[indexNumber].songTitle}`
+    artistPN.innerHTML = `${result[indexNumber].artistName}`
 }
-
-// let audioPlayer = document.createElement('audio')
-
-// const playNow = () => {
-//     pauseIt()
-//     let theMusic = JSON.parse(localStorage.getItem('musicUrl'))
-//     if (theMusic) {
-//         console.log(theMusic);
-//         audioPlayer.src = `${theMusic[0].songUrl}`
-//         audioPlayer.play()
-//     }
-// }
 
 const pauseIt = () => { 
     audioPlayer.pause()
