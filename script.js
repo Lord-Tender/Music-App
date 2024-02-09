@@ -1,13 +1,16 @@
-setTimeout(() => {
-    document.getElementById('loader').style.display = 'none'
-    document.getElementById('innerSection').style.height = '100%'
-}, 2000);
+
 
 const fetchMe = async () => {
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
     let response = await fetch(url)
     let songDetail = await response.json()
     console.log(songDetail);
+    if (songDetail) {
+        // setTimeout(() => {
+            document.getElementById('loader').style.display = 'none'
+            document.getElementById('innerSection').style.height = '100%'
+        // }, 2000);
+    }
     for (let index = 0; index < songDetail.length; index++) {
         musics.innerHTML += `
                     <div class="musicIts">
@@ -26,31 +29,30 @@ const fetchMe = async () => {
     }
 }
 
+let playArray = []
+
 const play = async (indexNumber) => {
+    playArray.pop()
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
     let get = await fetch(url)
     let result = await get.json()
-    console.log(result[0]);
-    const audioPlayer = document.createElement('audio');
-    audioPlayer.src = `${result[indexNumber].songUrl}`
-    audioPlayer.pause()
-    audioPlayer.play()
-    
-    // var music = result[indexNumber].songUrl
-    // var song = new Audio(music)
-    // song.play()
+    playArray.push(result[indexNumber].songUrl)
+    localStorage.setItem("musicUrl", JSON.stringify(playArray))
 }
 
-const pauseIt = async () => {
-    let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
-    let get = await fetch(url)
-    let result = await get.json()
-    for (let index = 0; index < result.length; index++) {
-        console.log(music);
-        var music = result[index].songUrl.pause()
-    }
 
-}
+// const play = async (indexNumber) => {
+//     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
+//     let get = await fetch(url)
+//     let result = await get.json()
+//     console.log(result[0]);
+//     const audioPlayer = document.createElement('audio');
+//     audioPlayer.src = `${result[indexNumber].songUrl}`
+//     audioPlayer.pause()
+//     audioPlayer.play()
+// }
+
+
 
 let favoriteSong = []
 
