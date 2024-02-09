@@ -37,7 +37,6 @@
 .sideBar h2 {
   color: white;
   margin-top: 1.7em;
-  /* font-family: 'Caveat', cursive; */
   font-family: 'Rubik', sans-serif;
   color: rgb(255, 38, 0);
 }
@@ -61,8 +60,6 @@
   width: 100%;
   display: flex;
   padding-left: 2.5em;
-  /* position: sticky;
-    top: 1%; */
 }
 
 .bannerImg {

@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px) {
+    .sideBar {
+        display: none;
+        width: 0;
+    }
+
+    .musicSide {
+        width: 100%;
+        padding: 0.5rem;
+        margin-left: 2em;
+    }
+
+    .rightPlaying {
+        display: none;
+    }
+
+    .leftMusic {
+        width: 100%;
+        padding: 0;
+    }
+
+    .banner {
+        height: 10rem;
+    }
+}
