@@ -6,10 +6,8 @@ const fetchMe = async () => {
     let songDetail = await response.json()
     console.log(songDetail);
     if (songDetail) {
-        // setTimeout(() => {
-            document.getElementById('loader').style.display = 'none'
-            document.getElementById('innerSection').style.height = '100%'
-        // }, 2000);
+        document.getElementById('loader').style.display = 'none'
+        document.getElementById('innerSection').style.height = '100%'
     }
     for (let index = 0; index < songDetail.length; index++) {
         musics.innerHTML += `
@@ -31,28 +29,42 @@ const fetchMe = async () => {
 
 let playArray = []
 
-const play = async (indexNumber) => {
-    playArray.pop()
-    let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
-    let get = await fetch(url)
-    let result = await get.json()
-    playArray.push(result[indexNumber].songUrl)
-    localStorage.setItem("musicUrl", JSON.stringify(playArray))
-}
-
-
 // const play = async (indexNumber) => {
+//     playArray.pop()
 //     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
 //     let get = await fetch(url)
 //     let result = await get.json()
-//     console.log(result[0]);
-//     const audioPlayer = document.createElement('audio');
-//     audioPlayer.src = `${result[indexNumber].songUrl}`
-//     audioPlayer.pause()
-//     audioPlayer.play()
+//     playArray.push(result[indexNumber])
+//     localStorage.setItem("musicUrl", JSON.stringify(playArray))
 // }
 
+const audioPlayer = document.createElement('audio');
 
+const play = async (indexNumber) => {
+    pauseIt()
+    let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
+    let get = await fetch(url)
+    let result = await get.json()
+    console.log(result[0]);
+    audioPlayer.src = `${result[indexNumber].songUrl}`
+    audioPlayer.play()
+}
+
+// let audioPlayer = document.createElement('audio')
+
+// const playNow = () => {
+//     pauseIt()
+//     let theMusic = JSON.parse(localStorage.getItem('musicUrl'))
+//     if (theMusic) {
+//         console.log(theMusic);
+//         audioPlayer.src = `${theMusic[0].songUrl}`
+//         audioPlayer.play()
+//     }
+// }
+
+const pauseIt = () => { 
+    audioPlayer.pause()
+}
 
 let favoriteSong = []
 
