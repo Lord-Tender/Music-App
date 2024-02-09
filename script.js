@@ -42,14 +42,29 @@ const play = async (indexNumber) => {
     console.log(result[0]);
     audioPlayer.src = `${result[indexNumber].songUrl}`
     audioPlayer.play()
-    songImgPn.src =`${result[indexNumber].songImage}`
+    songImgPn.src = `${result[indexNumber].songImage}`
     titlePN.innerHTML = `${result[indexNumber].songTitle}`
     artistPN.innerHTML = `${result[indexNumber].artistName}`
+    document.getElementById('play').style.display = "none"
+    document.getElementById('pause').style.display = "block"
 }
 
-const pauseIt = () => { 
+const pauseIt = () => {
     audioPlayer.pause()
 }
+
+pauseButton.addEventListener('click', () => {
+    let pausedD = document.getElementById('pause').style.display = "block"
+    if (pausedD) {
+        audioPlayer.pause()
+        document.getElementById('pause').style.display = "none"
+        let itIsPaused = document.getElementById('play').style.display = "block"
+    }else if (audioPlayer.paused) {
+        alert("%^DT%dtyy")
+        console.log("You are a bad boy");
+        audioPlayer.play()
+    }
+})
 
 let favoriteSong = []
 
