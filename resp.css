@@ -59,4 +59,38 @@
     #loader {
         left: 37%;
     }
+
+    .musicIts {
+        padding: 2%;
+        margin-top: 15px;
+    }
+
+    .songTA {
+        width: 40%;
+    }
+
+    .songTA p {
+        font-size: 0.9rem;
+    }
+
+    .songImg {
+        width: 90px;
+        height: 90px;
+        border-radius: 5%;
+    }
+
+    .buttonArea {
+        gap: 15px;
+        margin-top: 8%;
+    }
+
+    .musicIts button {
+        width: 3.5em;
+        height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    #fovIcon {
+        font-size: 1.8rem;
+    }
 }
