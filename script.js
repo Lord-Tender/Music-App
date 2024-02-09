@@ -29,15 +29,6 @@ const fetchMe = async () => {
 
 let playArray = []
 
-// const play = async (indexNumber) => {
-//     playArray.pop()
-//     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
-//     let get = await fetch(url)
-//     let result = await get.json()
-//     playArray.push(result[indexNumber])
-//     localStorage.setItem("musicUrl", JSON.stringify(playArray))
-// }
-
 const audioPlayer = document.createElement('audio');
 let songImgPn = document.getElementById('songImgPn')
 let titlePN = document.getElementById('titlePN')

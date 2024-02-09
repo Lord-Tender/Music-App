@@ -51,7 +51,7 @@
 .sideBar div p {
   font-size: 0.9em;
   font-family: 'Rubik', sans-serif;
-  color: rgb(255, 153, 0);
+  color: white;
 }
 
 .banner {
@@ -133,6 +133,10 @@
   display: flex;
   justify-content: center;
   padding-top: 10%;
+}
+
+#titlePN{
+  color: white !important;
 }
 
 .duration{
