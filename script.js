@@ -64,6 +64,16 @@ const play = async (indexNumber) => {
 
 }
 
+loopButton.addEventListener('click', () => {
+    let loop = audioPlayer.loop = true
+    if (loop) {
+        document.getElementById('loopButton').style.color = '#c5baba'
+    }else{
+        document.getElementById('loopButton').style.color = '#c5baba'
+        audioPlayer.loop = false
+    }
+})
+
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
