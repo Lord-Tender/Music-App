@@ -34,6 +34,7 @@ let songImgPn = document.getElementById('songImgPn')
 let titlePN = document.getElementById('titlePN')
 let artistPN = document.getElementById('artistPN')
 
+
 const play = async (indexNumber) => {
     pauseIt()
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
@@ -47,7 +48,28 @@ const play = async (indexNumber) => {
     artistPN.innerHTML = `${result[indexNumber].artistName}`
     document.getElementById('play').style.display = "none"
     document.getElementById('pause').style.display = "block"
+
+    document.getElementById("")
+
+    audioPlayer.addEventListener('timeupdate', function () {
+        musicRange.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        totalDuration.innerHTML = formatTime(audioPlayer.duration);
+        currentTime.textContent = formatTime(audioPlayer.currentTime);
+    });
+
+    musicRange.addEventListener('input', function () {
+        const newPosition = (musicRange.value / 100) * audioPlayer.duration;
+        audioPlayer.currentTime = newPosition;
+    });
+
 }
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${(seconds < 10 ? '0' : '')}${seconds}`;
+}
+  
 
 const pauseIt = () => {
     audioPlayer.pause()
@@ -59,7 +81,7 @@ pauseButton.addEventListener('click', () => {
         audioPlayer.pause()
         document.getElementById('pause').style.display = "none"
         let itIsPaused = document.getElementById('play').style.display = "block"
-    }else if (audioPlayer.paused) {
+    } else if (audioPlayer.paused) {
         alert("%^DT%dtyy")
         console.log("You are a bad boy");
         audioPlayer.play()
@@ -74,7 +96,6 @@ const addFov = async (getIndex) => {
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
     let get = await fetch(url)
     let result = await get.json()
-    // console.log(result[0]);
     if (fovIcon) {
         favoriteSong.push(result[getIndex])
         localStorage.setItem("favSongs", JSON.stringify(favoriteSong))
