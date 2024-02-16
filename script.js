@@ -64,11 +64,23 @@ const play = async (indexNumber) => {
 
 }
 
+function playAudio() {
+    audioPlayer.play();
+    document.getElementById('pause').style.display = 'block'
+    document.getElementById('play').style.display = 'none'
+}
+
+function pauseAudio() {
+    audioPlayer.pause();
+    document.getElementById('pause').style.display = 'none'
+    document.getElementById('play').style.display = 'block'
+}
+
 loopButton.addEventListener('click', () => {
     let loop = audioPlayer.loop = true
     if (loop) {
         document.getElementById('loopButton').style.color = '#c5baba'
-    }else{
+    } else {
         document.getElementById('loopButton').style.color = '#c5baba'
         audioPlayer.loop = false
     }
@@ -79,24 +91,11 @@ function formatTime(time) {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${(seconds < 10 ? '0' : '')}${seconds}`;
 }
-  
 
 const pauseIt = () => {
     audioPlayer.pause()
 }
 
-pauseButton.addEventListener('click', () => {
-    let pausedD = document.getElementById('pause').style.display = "block"
-    if (pausedD) {
-        audioPlayer.pause()
-        document.getElementById('pause').style.display = "none"
-        let itIsPaused = document.getElementById('play').style.display = "block"
-    } else if (audioPlayer.paused) {
-        alert("%^DT%dtyy")
-        console.log("You are a bad boy");
-        audioPlayer.play()
-    }
-})
 
 let favoriteSong = []
 
