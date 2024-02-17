@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         * {
             padding: 0;
@@ -55,6 +56,10 @@
             font-size: 2rem;
         }
 
+        .pageContent p {
+            text-align: center;
+        }
+
         .lab {
             margin-top: 100px;
             display: none;
@@ -90,8 +95,22 @@
             letter-spacing: 2px;
             font-size: 1.1rem;
         }
-        button:focus{
+
+        button:focus {
             outline: none;
+        }
+
+        #errMsg {
+            background-color: rgb(252, 168, 168);
+            color: red;
+            width: 40%;
+            border-radius: 7px;
+            text-align: center;
+            height: 2rem;
+            padding-top: 0.3rem;
+            margin-left: 30%;
+            margin-top: 7px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -102,6 +121,8 @@
         <div class="page">
             <div class="pageContent">
                 <h2>Sign Up</h2>
+                <p>Create a new account</p>
+                <div id="errMsg" class="animate__animated animate__flash"><i>Spaces can't empty!</i></div>
                 <div class="inputSide">
                     <label for="" class="lab">Email address:</label>
                     <input type="text" placeholder="First name">
@@ -134,18 +155,22 @@
         const createUser = () => {
             let email = document.getElementById("email").value
             let password = document.getElementById("password").value
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    if (user) {
-                        window.location.href = 'signin.html'
-                    }
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.log(errorCode, errorMessage);
-                });
+            if (email == "" && password == "") {
+                alert("Werey")
+            } else {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        if (user) {
+                            window.location.href = 'signin.html'
+                        }
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode, errorMessage);
+                    });
+            }
         }
 
         window.createUser = createUser
