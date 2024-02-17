@@ -1,4 +1,4 @@
-
+document.getElementById('musicRange').value = 0
 
 const fetchMe = async () => {
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
