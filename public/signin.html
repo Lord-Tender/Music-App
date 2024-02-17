@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         * {
             padding: 0;
@@ -75,7 +76,8 @@
         input:focus {
             outline: none;
         }
-        button{
+
+        button {
             border: none;
             width: 40%;
             height: 2.5rem;
@@ -89,8 +91,23 @@
             letter-spacing: 2px;
             font-size: 1.1rem;
         }
-        #signUp{
+
+        #signUp {
             text-align: center;
+        }
+
+        #errMsg {
+            background-color: rgb(252, 168, 168);
+            color: red;
+            width: 40%;
+            border-radius: 7px;
+            text-align: center;
+            height: 2rem;
+            padding-top: 0.3rem;
+            margin-left: 30%;
+            margin-top: 7px;
+            font-weight: 600;
+            display: none;
         }
     </style>
 </head>
@@ -101,7 +118,10 @@
         <div class="page">
             <div class="pageContent">
                 <h2>Sign In to Tender Music</h2>
-                <p id="signUp">Don't have an account? <a href="signup.html" style="text-decoration: none;color: rgb(255, 83, 83); font-weight: bold;">Sign Up</a></p>
+                <p id="signUp">Don't have an account? <a href="signup.html"
+                        style="text-decoration: none;color: rgb(255, 83, 83); font-weight: bold;">Sign Up</a></p>
+                <div id="errMsg" class="animate__animated animate__flash animate__infinite animate__slow"><i>Spaces
+                        can't empty!</i></div>
                 <div class="inputSide">
                     <label for="" class="lab">Email address:</label>
                     <input type="text" id="email" placeholder="Email Address">
@@ -132,6 +152,13 @@
         const signUser = () => {
             let email = document.getElementById("email").value
             let password = document.getElementById("password").value
+            if (email == "" || password == "") {
+                document.getElementById("errMsg").style.display = 'block'
+
+                setTimeout(() => {
+                    document.getElementById("errMsg").style.display = 'none'
+                }, 2000);
+            }
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
