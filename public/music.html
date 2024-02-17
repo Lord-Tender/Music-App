@@ -21,12 +21,12 @@
                 <p>Music</p>
                 <p>Artist</p>
                 <p>Albums</p>
-                <!-- <p>x</p> -->
                 <div>
                     <h2 style="font-size: 1.3em;">My Music</h2>
                     <p>Recently Played</p>
                     <p>Favourite Song</p>
                     <p>Local Music</p>
+                    <div><button onclick="signOutNow()">Sign Out</button></div>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDIpdXgMUm9V13jvxXcZZRxHO-afHNyj7M",
@@ -109,10 +109,20 @@
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const uid = user.uid;
-                console.log(uid)
+                console.log(user)
             } else {
+                window.location.href = 'signin.html'
             }
         });
+
+        const signOutNow = () => {
+            signOut(auth).then(() => {
+                window.location.href = 'signin.html'
+            }).catch((error) => {
+            });
+        }
+
+        window.signOutNow = signOutNow
 
     </script>
     <script src="script.js"></script>
