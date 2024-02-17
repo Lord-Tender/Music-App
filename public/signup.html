@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .mainSection {
+            /* background: radial-gradient(ellipse at top left, rgb(255, 135, 135), rgba(255, 38, 0, 0.863), rgba(255, 51, 0, 0.849)); */
+            height: 100vh;
+            width: 100%;
+            background-color: pink;
+            background-color: rgb(255, 109, 56);
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pageContent {
+            width: 45%;
+            height: 75%;
+            padding: 1rem;
+            margin-top: 4%;
+            border-radius: 7px;
+            background-color: rgba(255, 255, 255, 0.63);
+            font-family: "Abel", sans-serif;
+        }
+
+        .pageContent h2 {
+            text-align: center;
+            color: red;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+
+        .lab {
+            margin-top: 100px;
+            display: none;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            height: 2.9rem;
+            border-radius: 7px;
+            border: none;
+            padding-left: .8rem;
+            margin-top: 1rem;
+            background-color: rgba(240, 248, 255, 0.781);
+            margin-left: 5%;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            border: none;
+            width: 40%;
+            height: 2.5rem;
+            background-color: rgba(255, 68, 0, 0.856);
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            margin-left: 30%;
+            color: rgba(255, 255, 255, 0.836);
+            font-weight: 600;
+            font-family: "Abel", sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+        button:focus{
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="mainSection">
+        <div class="img"><img src="Image/pexels-sound-on-3756772-removebg-preview.png" alt=""></div>
+        <div class="page">
+            <div class="pageContent">
+                <h2>Sign Up</h2>
+                <div class="inputSide">
+                    <label for="" class="lab">Email address:</label>
+                    <input type="text" placeholder="First name">
+                    <input type="text" placeholder="Last name">
+                    <input type="text" id="email" placeholder="Email Address">
+                    <label for="" class="lab">Password:</label>
+                    <input type="text" id="password" placeholder="Password">
+                    <button onclick="createUser()">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDIpdXgMUm9V13jvxXcZZRxHO-afHNyj7M",
+            authDomain: "tender-music.firebaseapp.com",
+            projectId: "tender-music",
+            storageBucket: "tender-music.appspot.com",
+            messagingSenderId: "638236677984",
+            appId: "1:638236677984:web:4e7aed47197027d5a3b005"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const createUser = () => {
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    if (user) {
+                        window.location.href = 'signin.html'
+                    }
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode, errorMessage);
+                });
+        }
+
+        window.createUser = createUser
+
+    </script>
+</body>
+
+</html>

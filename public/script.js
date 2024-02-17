@@ -4,7 +4,6 @@ const fetchMe = async () => {
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
     let response = await fetch(url)
     let songDetail = await response.json()
-    console.log(songDetail);
     if (songDetail) {
         document.getElementById('loader').style.display = 'none'
         document.getElementById('innerSection').style.height = '100%'
@@ -40,7 +39,6 @@ const play = async (indexNumber) => {
     let url = 'https://musicapi-19wk.onrender.com/music/myAPI'
     let get = await fetch(url)
     let result = await get.json()
-    console.log(result[0]);
     audioPlayer.src = `${result[indexNumber].songUrl}`
     audioPlayer.play()
     songImgPn.src = `${result[indexNumber].songImage}`

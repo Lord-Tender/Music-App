@@ -73,13 +73,14 @@
                     <div class="duration">
                         <p id="currentTime">0:00</p>
                         <div style="width: 75%;">
-                            <input type="range" id="musicRange" >
+                            <input type="range" id="musicRange">
                         </div>
                         <p id="totalDuration">0:00</p>
                     </div>
                     <div class="controls">
                         <div id="backPlay"><i class="fa-solid fa-backward-fast"></i></div>
-                        <div id="pauseButton"><i class="fa-solid fa-play" id="play" onclick="playAudio()"></i> <i class="fa-solid fa-pause" id="pause" onclick="pauseAudio()"></i></div>
+                        <div id="pauseButton"><i class="fa-solid fa-play" id="play" onclick="playAudio()"></i> <i
+                                class="fa-solid fa-pause" id="pause" onclick="pauseAudio()"></i></div>
                         <div id="nextButton"><i class="fa-solid fa-forward-fast"></i></div>
                         <div id="loopButton"><i class="fa-solid fa-repeat"></i></div>
                     </div>
@@ -87,8 +88,33 @@
             </section>
         </div>
     </div>
-    
 
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDIpdXgMUm9V13jvxXcZZRxHO-afHNyj7M",
+            authDomain: "tender-music.firebaseapp.com",
+            projectId: "tender-music",
+            storageBucket: "tender-music.appspot.com",
+            messagingSenderId: "638236677984",
+            appId: "1:638236677984:web:4e7aed47197027d5a3b005"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const uid = user.uid;
+                console.log(uid)
+            } else {
+            }
+        });
+
+    </script>
     <script src="script.js"></script>
     <script>
         window.onload = fetchMe
