@@ -18,11 +18,10 @@
         }
 
         body {
-            /* background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 81, 0), rgb(255, 0, 0)); */
-            background-color: rgb(255, 24, 62);
             background-color: rgb(198, 216, 231);
             font-family: "Oswald", sans-serif;
             font-family: "M PLUS Rounded 1c", sans-serif;
+            overflow: hidden;
         }
 
         .header {
@@ -37,7 +36,7 @@
             color: rgb(255, 24, 62);
         }
 
-        .header button {
+        .header button{
             border: none;
             width: 7rem;
             height: 2.5rem;
@@ -110,24 +109,32 @@
             right: 10%;
             height: 39.6rem;
         }
+        button:focus{
+            outline: none;
+        }
+        button{
+            cursor: pointer !important;
+        }
+        .header i{
+            margin-left: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
         <div>
-            <p>Tender Music</p>
+            <p>Tender Music<i class="fa-solid fa-music"></i></p>
         </div>
         <div class="button">
-            <button>Sign In</button><button>Sign Up</button>
+            <a href="signin.html"><button>Sign In</button></a><a href="signup.html"><button>Sign Up</button></a>
         </div>
     </div>
     <div class="bodySide">
         <div class="leftSide">
             <h1>Tender Music</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora excepturi delectus aliquid deserunt
-                optio fugit aperiam ipsam, vero, ipsa placeat, cum praesentium a amet quod.</p>
-            <button>Sign up</button>
+            <p>Music is the universal language that speaks to our souls, and our app is the symphony that orchestrates your journey through its melodies.</p>
+            <a href="signup.html"><button>Sign up</button></a>
         </div>
         <div class="rightSide">
             <img src="Image/pexels-sound-on-3756772-removebg-preview.png" alt="">
