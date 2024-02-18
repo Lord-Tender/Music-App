@@ -330,7 +330,7 @@ input[type="range"]::-moz-range-progress {
 #loader {
   position: absolute;
   top: 43%;
-  left: 47%;
+  left: 44%;
   display: block;
 }
 
