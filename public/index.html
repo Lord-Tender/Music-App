@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=M+PLUS+Rounded+1c&display=swap"
+        rel="stylesheet">
+    <script defer src="https://kit.fontawesome.com/7c37944b19.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-image: linear-gradient(to right, rgb(255, 38, 0), rgb(255, 81, 0), rgb(255, 0, 0)); */
+            background-color: rgb(255, 24, 62);
+            background-color: rgb(198, 216, 231);
+            font-family: "Oswald", sans-serif;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+        }
+
+        .header {
+            display: flex;
+            padding: 1rem 3rem;
+            justify-content: space-between;
+            margin-top: 0.8rem;
+        }
+
+        .header p {
+            font-size: 2rem;
+            color: rgb(255, 24, 62);
+        }
+
+        .header button {
+            border: none;
+            width: 7rem;
+            height: 2.5rem;
+            margin-right: 25px;
+            border-radius: 25px;
+            background-color: orangered;
+            border: none;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .header button:hover {
+            border: 2.5px solid white;
+            background: orangered;
+            color: white;
+        }
+
+        .bodySide {
+            display: flex;
+            width: 100%;
+        }
+
+        .leftSide {
+            width: 50%;
+        }
+
+        .leftSide h1 {
+            margin-top: 15%;
+            margin-left: 10%;
+            font-size: 3rem;
+            color: red;
+        }
+
+        .leftSide p {
+            margin-left: 10%;
+            margin-top: 3%;
+            font-size: 1.2rem;
+            color: rgb(255, 81, 0);
+        }
+
+        .leftSide button {
+            margin-left: 10%;
+            margin-top: 7%;
+            border: none;
+            width: 10rem;
+            height: 3rem;
+            margin-right: 25px;
+            border-radius: 25px;
+            transition: .4s;
+            font-size: 1.2rem;
+            border: 2.5px solid white;
+            background: orangered;
+            color: white;
+        }
+
+        .leftSide button:hover {
+            background-color: white;
+            border: none;
+            color: orangered;
+        }
+
+        .rightSide {
+            width: 50%;
+            position: relative;
+        }
+
+        .rightSide img {
+            position: absolute;
+            top: -28%;
+            right: 10%;
+            height: 39.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <p>Tender Music</p>
+        </div>
+        <div class="button">
+            <button>Sign In</button><button>Sign Up</button>
+        </div>
+    </div>
+    <div class="bodySide">
+        <div class="leftSide">
+            <h1>Tender Music</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora excepturi delectus aliquid deserunt
+                optio fugit aperiam ipsam, vero, ipsa placeat, cum praesentium a amet quod.</p>
+            <button>Sign up</button>
+        </div>
+        <div class="rightSide">
+            <img src="Image/pexels-sound-on-3756772-removebg-preview.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
