@@ -16,10 +16,12 @@
             margin: 0;
             box-sizing: border-box;
         }
-        button:focus{
+
+        button:focus {
             outline: none;
         }
-        button{
+
+        button {
             cursor: pointer !important;
         }
 
@@ -42,7 +44,8 @@
             color: rgb(255, 24, 62);
         }
 
-        .btn1, .btn2{
+        .btn1,
+        .btn2 {
             border: none;
             width: 7rem;
             height: 2.4rem;
@@ -58,6 +61,7 @@
             background-color: orangered;
             color: white;
         }
+
         .btn2:hover {
             border: 2.5px solid white;
             background-color: orangered;
@@ -119,13 +123,57 @@
             right: 10%;
             height: 39.6rem;
         }
-        
-        .header i{
+
+        .header i {
             margin-left: 10px;
         }
-        /* .button{
-            margin-left: 50%;
-        } */
+
+        @media screen and (max-width:478px) {
+            .header{
+                padding: 0.8rem;
+            }
+            .header p {
+                font-size: 1.2rem;
+            }
+            .btn1,.btn2{
+                width: 4.5rem;
+                font-size: 0.8rem;
+                height: 2rem;
+                margin-right: 5px;
+            }
+            .bodySide{
+                flex-direction: column;
+            }
+            .leftSide{
+                width: 100%;
+            }
+            .leftSide h1{
+                font-size: 2rem;
+                margin: 0;
+                text-align: center;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .leftSide p{
+                font-size: 1.2rem;
+                margin: 5px;
+                text-align: center;
+            }
+            .leftSide button{
+                width: 35%;
+                margin: 0;
+                margin-left: 32.5%;
+                margin-top: 35px;
+            }
+            .rightSide{
+                width: 100%;
+            }
+            .rightSide img {
+                position: static;
+                height: 21rem;
+                margin-left: 20%;
+            }
+        }
     </style>
 </head>
 
@@ -142,7 +190,8 @@
     <div class="bodySide">
         <div class="leftSide">
             <h1>Tender Music</h1>
-            <p>Music is the universal language that speaks to our souls, and our app is the symphony that orchestrates your journey through its melodies.</p>
+            <p>Music is the universal language that speaks to our souls, and our app is the symphony that orchestrates
+                your journey through its melodies.</p>
             <a href="signup.html"><button>Sign up</button></a>
         </div>
         <div class="rightSide">
